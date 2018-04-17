@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quản Lý Loại Sản Phẩm</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" />
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+    <!-- End plugin css for this page -->
+    <link rel="stylesheet" href="node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+<body>
+<div class="container-scroller">
+
+    
+
+<!-- partial:partials/_navbar.html -->
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+	<div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+		<a class="navbar-brand brand-logo" href="index.php"><img src="images/logo.svg" alt="logo"/></a>
+		<a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo"/></a>
+	</div>
+	<div class="navbar-menu-wrapper d-flex align-items-center">
+		<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+	
+
+
+
+
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown d-none d-lg-flex">
+				<a class="nav-link dropdown-toggle nav-btn" id="actionDropdown" href="#" data-toggle="dropdown">
+              <span class="btn">+ Tạo Mới</span>
+            </a>
+			
+
+				<div class="dropdown-menu navbar-dropdown dropdown-left" aria-labelledby="actionDropdown">
+					<a class="dropdown-item" href="#">
+                <i class="icon-user text-primary"></i>
+                Tài Khoản Người Dùng
+              </a>
+				
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">
+                <i class="icon-user-following text-warning"></i>
+                Tài Khoản Admin
+              </a>
+				
+
+			</li>
+		</ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+
+		<ul class="navbar-nav navbar-nav-right">
+			<li class="nav-item nav-settings d-none d-lg-block">
+				<a class="nav-link" href="index.php?act=logout" title="Đăng Xuất">
+              <i class="icon-logout"></i>
+            </a>
+			
+			</li>
+		</ul>
+		</div>
+</nav>
+<!-- partial -->    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+            <!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <div class="nav-link">
+                <div class="profile-image">
+                    <a href="profile.php"><img src="images/faces/face1.jpg"
+                                               alt="image"/></a>
+                    <span class="online-status online"></span>
+                    <!--change class online to offline or busy as needed-->
+                </div>
+                <div class="profile-name">
+                    <p class="name">
+                        Giang Nguyễn                    </p>
+                    <p class="designation">
+                        Super Admin
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">
+                <i class="icon-rocket menu-icon"></i>
+                <span class="menu-title">Tổng Quan</span>
+                <span class="badge badge-success">New</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="product-category.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Loại Sản Phẩm</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="product.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Sản Phẩm</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="product-images.html">
+                <i class="icon-picture menu-icon"></i>
+                <span class="menu-title">Ảnh Sản Phẩm</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="brand.html">
+                <i class="icon-picture menu-icon"></i>
+                <span class="menu-title">Thương hiệu</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="order.html">
+                <i class="icon-tag menu-icon"></i>
+                <span class="menu-title">Đơn hàng</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="users.html">
+                <i class="icon-user menu-icon"></i>
+                <span class="menu-title">Tài Khoản</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ads.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Quản lý quảng cáo</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- partial -->
+
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Quản Lý Loại Sản Phẩm</h4>
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    data-target="#add_product_category" data-whatever="@mdo" name="edit">Thêm
+            </button>
+            <br>
+            <br>
+            <h5 class="card-title">Chọn mục sản phẩm cần xem</h5>
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="select_category"
+                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Thiết bị điện tử            </button>
+            <div class="dropdown-menu" aria-labelledby="select_category">
+                <a class="dropdown-item" href="#" data-product_id = "1">Thiết bị điện tử</a><a class="dropdown-item" href="#" data-product_id = "2">Phụ kiện điện tử</a><a class="dropdown-item" href="#" data-product_id = "3">Thiết bị gia dụng</a><a class="dropdown-item" href="#" data-product_id = "4">Chăm sóc sức khỏe, Làm đẹp</a><a class="dropdown-item" href="#" data-product_id = "5">Hàng Mẹ, Bé và Đồ chơi</a><a class="dropdown-item" href="#" data-product_id = "6">Siêu thị / Tạp hóa</a><a class="dropdown-item" href="#" data-product_id = "7">Hàng Gia dụng và Đời sống</a><a class="dropdown-item" href="#" data-product_id = "8">Thời trang nữ</a><a class="dropdown-item" href="#" data-product_id = "9">Thời trang Nam</a><a class="dropdown-item" href="#" data-product_id = "10">Phụ Kiện Thời Trang</a><a class="dropdown-item" href="#" data-product_id = "11">Thể thao, Du lịch</a><a class="dropdown-item" href="#" data-product_id = "12">Ôtô, Xe máy Thiết bị định vị</a>            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div id="_display_table"><div class="table-responsive"><table id="order-listing" class="table"><thead><tr><th>#</th><th>Tên loại sản phẩm</th><th>Xử lý</th></tr></thead><tbody><tr><td>1</td><td>Hệ thống giải trí tại gia</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="15" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="15" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>2</td><td>Laptop</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="16" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="16" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>3</td><td>Máy ảnh &amp; Máy quay phim</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="23" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="23" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>4</td><td>Máy bay camera &amp; Phụ kiện</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="24" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="24" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>5</td><td>Máy in</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="25" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="25" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>6</td><td>Máy tính bảng</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="26" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="26" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>7</td><td>Máy tính để bàn</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="27" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="27" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr><tr><td>8</td><td>Tivi</td><td>    <a class="badge badge-success edit_data" data-toggle="modal" data-target="#edit_product_category" data-whatever="@mdo" id="28" name="edit" style="color:white;cursor:pointer"><i class="fa fa-pencil-square"></i></a>    <a class="badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="28" name="delete" style="color:white;cursor:pointer"><i class="fa fa-times-circle"></i></a></td></tr></tbody></table></div></div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<!-- sua loai san pham -->
+<div class="modal fade" id="edit_product_category" tabindex="-1" role="dialog" aria-labelledby="edit_product_category"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sửa Thông Tin Loại sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="modules/product-category/product-category-process.php" method="post"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Tên</label>
+                        <input type="text" class="form-control" id="product_category_name_1" value=""
+                               name="product_category_name">
+                        <div id="_notice_edit">
+
+                        </div>
+                    </div>
+
+                    <input type="hidden" class="form-control" name="product_category_id" id="product_category_id">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" name="edit" class="btn btn-primary" id="_edit">Cập Nhật</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- them loai san pham -->
+
+
+<div class="modal fade" id="add_product_category" tabindex="-1" role="dialog" aria-labelledby="edit_product_category"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thêm Loại sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="modules/product-category/product-category-process.php" method="post"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Tên</label>
+                        <input type="text" class="form-control" id="product_category_name_2" value=""
+                               name="product_category_name">
+                        <div id="_notice_add">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Loại sản phẩm cha</label>
+                        <select class="form-control" id="product_category_super" name="product_category_super">
+                            <option value='0'>Không có</option>
+                                                            <option value="1">Thiết bị điện tử</option>
+
+                                                            <option value="2">Phụ kiện điện tử</option>
+
+                                                            <option value="3">Thiết bị gia dụng</option>
+
+                                                            <option value="4">Chăm sóc sức khỏe, Làm đẹp</option>
+
+                                                            <option value="5">Hàng Mẹ, Bé và Đồ chơi</option>
+
+                                                            <option value="6">Siêu thị / Tạp hóa</option>
+
+                                                            <option value="7">Hàng Gia dụng và Đời sống</option>
+
+                                                            <option value="8">Thời trang nữ</option>
+
+                                                            <option value="9">Thời trang Nam</option>
+
+                                                            <option value="10">Phụ Kiện Thời Trang</option>
+
+                                                            <option value="11">Thể thao, Du lịch</option>
+
+                                                            <option value="12">Ôtô, Xe máy Thiết bị định vị</option>
+
+                                                    </select>
+                    </div>
+                    <input type="hidden" class="form-control" name="product_category_id" id="product_category_id">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" name="add" class="btn btn-primary" id="_add">Thêm</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Xac nhan xoa -->
+<div class="modal fade" id="delete_product_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm delete?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <form id="delete_user" action="modules/product-category/product-category-process.php" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="_id" value="" name="product_category_id"
+                               style="opacity:0;visibility:hidden">
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="delete" class="btn btn-primary">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div><footer class="footer">
+	<div class="container-fluid clearfix">
+		<span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="#">UrbanUI</a>. All rights reserved.</span>
+		<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+	</div>
+</footer>        </div>
+    </div>
+</div>
+
+<!-- plugins:js -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+<script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- Plugin js for this page-->
+<script src="node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/raphael/raphael.min.js"></script>
+<script src="node_modules/morris.js/morris.min.js"></script>
+<script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- End plugin js for this page-->
+<script src="node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+<!-- inject:js -->
+<script src="js/off-canvas.js"></script>
+<script src="js/hoverable-collapse.js"></script>
+<script src="js/misc.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="js/data-table.js"></script>
+<script src="js/toastDemo.js"></script>
+<!-- End custom js for this page-->
+
+</body>
+
+</html>

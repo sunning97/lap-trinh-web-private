@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quảng Cáo</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" />
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+    <!-- End plugin css for this page -->
+    <link rel="stylesheet" href="node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="node_modules/owl-carousel-2/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="node_modules/owl-carousel-2/assets/owl.theme.default.min.css" />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+                <a class="navbar-brand brand-logo" href="index.php"><img src="images/logo.svg" alt="logo"/></a>
+                <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo"/></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown d-none d-lg-flex">
+                        <a class="nav-link dropdown-toggle nav-btn" id="actionDropdown" href="#" data-toggle="dropdown">
+              <span class="btn">+ Tạo Mới</span>
+            </a>
+                        <div class="dropdown-menu navbar-dropdown dropdown-left" aria-labelledby="actionDropdown">
+                            <a class="dropdown-item" href="#">
+                <i class="icon-user text-primary"></i>
+                Tài Khoản Người Dùng
+              </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                <i class="icon-user-following text-warning"></i>
+                Tài Khoản Admin
+              </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-settings d-none d-lg-block">
+                        <a class="nav-link" href="index.php?act=logout" title="Đăng Xuất">
+              <i class="icon-logout"></i>
+            </a>
+                    </li>
+                </ul>
+                </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <!-- partial:partials/_sidebar.html -->
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                    <ul class="nav">
+                        <li class="nav-item nav-profile">
+                            <div class="nav-link">
+                                <div class="profile-image">
+                                    <a href="profile.php"><img src="images/faces/face1.jpg"
+                                               alt="image"/></a>
+                                    <span class="online-status online"></span>
+                                    <!--change class online to offline or busy as needed-->
+                                </div>
+                                <div class="profile-name">
+                                    <p class="name">
+                                        Giang Nguyễn </p>
+                                    <p class="designation">
+                                        Super Admin
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                <i class="icon-rocket menu-icon"></i>
+                <span class="menu-title">Tổng Quan</span>
+                <span class="badge badge-success">New</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product-category.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Loại Sản Phẩm</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Sản Phẩm</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product-images.html">
+                <i class="icon-picture menu-icon"></i>
+                <span class="menu-title">Ảnh Sản Phẩm</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="brand.html">
+                <i class="icon-picture menu-icon"></i>
+                <span class="menu-title">Thương hiệu</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="order.html">
+                <i class="icon-tag menu-icon"></i>
+                <span class="menu-title">Đơn hàng</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="users.html">
+                <i class="icon-user menu-icon"></i>
+                <span class="menu-title">Tài Khoản</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ads.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Quản lý quảng cáo</span>
+            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- partial -->
+                <div class="content-wrapper">
+                    <ul class="nav nav-tabs tab-solid tab-solid-danger" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tab-5-1" data-toggle="tab" href="#home-5-1" role="tab" aria-controls="home-5-1" aria-selected="true">ADS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab-5-2" data-toggle="tab" href="#profile-5-2" role="tab" aria-controls="profile-5-2" aria-selected="false">SLIDE</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content tab-content-solid">
+                        <div class="tab-pane fade show active" id="home-5-1" role="tabpanel" aria-labelledby="tab-5-1">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <h4 class="card-title"></h4>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="table-responsive">
+                                                        <table id="order-listing" class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Ảnh ADS</th>
+                                                                    <th>ADS</th>
+                                                                    <th>Url</th>
+                                                                    <th>Xử lý</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>
+                                                                        <img src="images/ads/expanded_text_ads_blog_hero.gif" alt="image" /></td>
+                                                                    <td>
+                                                                        <div class="badge badge-primary badge-pill">ADS-1</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="http://youtube.com">http://youtube.com</a>
+                                                                    </td>
+                                                                    <td><a class="badge badge-primary edit_data" data-toggle="modal" data-target="#edit_ads" data-whatever="@mdo" id="6" name="edit" style="color:white;cursor:pointer"><i
+                                                                        class="fa fa-pencil-square"></i></a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>
+                                                                        <img src="images/ads/12.jpg" alt="image" /></td>
+                                                                    <td>
+                                                                        <div class="badge badge-primary badge-pill">ADS-1</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="http://fb.com">http://fb.com</a>
+                                                                    </td>
+                                                                    <td><a class="badge badge-primary edit_data" data-toggle="modal" data-target="#edit_ads" data-whatever="@mdo" id="5" name="edit" style="color:white;cursor:pointer"><i
+                                                                        class="fa fa-pencil-square"></i></a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>
+                                                                        <img src="images/ads/21413-24435-Screenshot_1-l.jpg" alt="image" /></td>
+                                                                    <td>
+                                                                        <div class="badge badge-primary badge-pill">ADS-1</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="http://google.com">http://google.com</a>
+                                                                    </td>
+                                                                    <td><a class="badge badge-primary edit_data" data-toggle="modal" data-target="#edit_ads" data-whatever="@mdo" id="4" name="edit" style="color:white;cursor:pointer"><i
+                                                                        class="fa fa-pencil-square"></i></a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td>
+                                                                        <img src="images/ads/17-WE-036-0002-BB-Hy-Vee-June-Half-Page-ad-V1R3.jpg" alt="image" /></td>
+                                                                    <td>
+                                                                        <div class="badge badge-danger badge-pill">ADS-2</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="http://google.com">http://google.com</a>
+                                                                    </td>
+                                                                    <td><a class="badge badge-primary edit_data" data-toggle="modal" data-target="#edit_ads" data-whatever="@mdo" id="3" name="edit" style="color:white;cursor:pointer"><i
+                                                                        class="fa fa-pencil-square"></i></a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>5</td>
+                                                                    <td>
+                                                                        <img src="images/ads/2.jpg" alt="image" /></td>
+                                                                    <td>
+                                                                        <div class="badge badge-danger badge-pill">ADS-2</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="http://google.com">http://google.com</a>
+                                                                    </td>
+                                                                    <td><a class="badge badge-primary edit_data" data-toggle="modal" data-target="#edit_ads" data-whatever="@mdo" id="2" name="edit" style="color:white;cursor:pointer"><i
+                                                                        class="fa fa-pencil-square"></i></a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>6</td>
+                                                                    <td>
+                                                                        <img src="images/ads/Haiti-Campaign.jpg" alt="image" /></td>
+                                                                    <td>
+                                                                        <div class="badge badge-danger badge-pill">ADS-2</div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="http://google.com">http://google.com</a>
+                                                                    </td>
+                                                                    <td><a class="badge badge-primary edit_data" data-toggle="modal" data-target="#edit_ads" data-whatever="@mdo" id="1" name="edit" style="color:white;cursor:pointer"><i
+                                                                        class="fa fa-pencil-square"></i></a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <h4 class="card-title">ADS 1 Preview</h4>
+                                            <div class="owl-carousel owl-theme full-width">
+                                                <div class="item">
+                                                    <img src="images/ads/expanded_text_ads_blog_hero.gif" alt="image" />
+                                                </div>
+                                                <div class="item">
+                                                    <img src="images/ads/12.jpg" alt="image" />
+                                                </div>
+                                                <div class="item">
+                                                    <img src="images/ads/21413-24435-Screenshot_1-l.jpg" alt="image" />
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <h4 class="card-title">ADS 2 Preview</h4>
+                                            <div class="owl-carousel owl-theme full-width">
+                                                <div class="item">
+                                                    <img src="images/ads/17-WE-036-0002-BB-Hy-Vee-June-Half-Page-ad-V1R3.jpg" alt="image" />
+                                                </div>
+                                                <div class="item">
+                                                    <img src="images/ads/2.jpg" alt="image" />
+                                                </div>
+                                                <div class="item">
+                                                    <img src="images/ads/Haiti-Campaign.jpg" alt="image" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile-5-2" role="tabpanel" aria-labelledby="tab-5-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h5 class="card-title" style="display: inline-block;margin-right: 10px">Số slide
+                                        đang hiển thị: 3   </h5>
+                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#edit_num_slide" data-whatever="@mdo">Thay đổi
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="table-responsive">
+                                                        <table id="order-listing" class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Ảnh</th>
+                                                                    <th>Url</th>
+                                                                    <th>Xử lý</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td><img class="card-img" src="../uploads/slider/report-cover-1000x500.png" alt="Card image"></td>
+                                                                    <td><a href="http://fb.com">http://fb.com</a></td>
+                                                                    <td>
+                                                                        <a class="badge badge-danger view_data_slide" data-toggle="modal" data-target="#view_slide" data-whatever="@mdo" id="5" name="view" style="color:white;cursor:pointer" title="View"><i
+                                                                    class="fa fa-eye"></i></a>
+                                                                        <a class="badge badge-success edit_data_slide" data-toggle="modal" data-target="#edit_slide" data-whatever="@mdo" id="5" name="edit" style="color:white;cursor:pointer" title="Edit"><i
+                                                                    class="fa fa-pencil-square"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td><img class="card-img" src="../uploads/slider/aa.jpg" alt="Card image"></td>
+                                                                    <td><a href="http://google.com">http://google.com</a></td>
+                                                                    <td>
+                                                                        <a class="badge badge-danger view_data_slide" data-toggle="modal" data-target="#view_slide" data-whatever="@mdo" id="4" name="view" style="color:white;cursor:pointer" title="View"><i
+                                                                    class="fa fa-eye"></i></a>
+                                                                        <a class="badge badge-success edit_data_slide" data-toggle="modal" data-target="#edit_slide" data-whatever="@mdo" id="4" name="edit" style="color:white;cursor:pointer" title="Edit"><i
+                                                                    class="fa fa-pencil-square"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td><img class="card-img" src="../uploads/slider/mobile-audience-susan-gilbert-1000x500.jpg" alt="Card image"></td>
+                                                                    <td><a href="fontawesome.io/icons/">fontawesome.io/icons/</a></td>
+                                                                    <td>
+                                                                        <a class="badge badge-danger view_data_slide" data-toggle="modal" data-target="#view_slide" data-whatever="@mdo" id="3" name="view" style="color:white;cursor:pointer" title="View"><i
+                                                                    class="fa fa-eye"></i></a>
+                                                                        <a class="badge badge-success edit_data_slide" data-toggle="modal" data-target="#edit_slide" data-whatever="@mdo" id="3" name="edit" style="color:white;cursor:pointer" title="Edit"><i
+                                                                    class="fa fa-pencil-square"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>4</td>
+                                                                    <td><img class="card-img" src="../uploads/slider/ss.jpg" alt="Card image"></td>
+                                                                    <td><a href="http://google.com">http://google.com</a></td>
+                                                                    <td>
+                                                                        <a class="badge badge-danger view_data_slide" data-toggle="modal" data-target="#view_slide" data-whatever="@mdo" id="2" name="view" style="color:white;cursor:pointer" title="View"><i
+                                                                    class="fa fa-eye"></i></a>
+                                                                        <a class="badge badge-success edit_data_slide" data-toggle="modal" data-target="#edit_slide" data-whatever="@mdo" id="2" name="edit" style="color:white;cursor:pointer" title="Edit"><i
+                                                                    class="fa fa-pencil-square"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>5</td>
+                                                                    <td><img class="card-img" src="../uploads/slider/magazine-covers-new.jpg" alt="Card image"></td>
+                                                                    <td><a href="http://youtube.com">http://youtube.com</a></td>
+                                                                    <td>
+                                                                        <a class="badge badge-danger view_data_slide" data-toggle="modal" data-target="#view_slide" data-whatever="@mdo" id="1" name="view" style="color:white;cursor:pointer" title="View"><i
+                                                                    class="fa fa-eye"></i></a>
+                                                                        <a class="badge badge-success edit_data_slide" data-toggle="modal" data-target="#edit_slide" data-whatever="@mdo" id="1" name="edit" style="color:white;cursor:pointer" title="Edit"><i
+                                                                    class="fa fa-pencil-square"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h4 class="card-title">Slide Preview</h4>
+                                            <div class="owl-carousel owl-theme full-width">
+                                                <div class="item">
+                                                    <div class="card text-white">
+                                                        <img class="card-img" src="../uploads/slider/report-cover-1000x500.png" alt="Card image">
+                                                        <div class="card-img-overlay d-flex">
+                                                            <div class="mt-auto text-left w-100">
+                                                                <h3 style="color: #0f1531">Asus Zenfone 4</h3>
+                                                                <h3 style="color: #0f1531">phân phối chính hãng</h3>
+                                                                <h3 style="color: #F16667">Đến shop ngay</h3>
+                                                                <h3 style="color: #0f1531">4190000</h3>
+                                                                <button class="btn btn-primary">Mua ngay</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="card text-white">
+                                                        <img class="card-img" src="../uploads/slider/aa.jpg" alt="Card image">
+                                                        <div class="card-img-overlay d-flex">
+                                                            <div class="mt-auto text-left w-100">
+                                                                <h3 style="color: #0f1531">Sản phẩm</h3>
+                                                                <h3 style="color: #0f1531">Tivi</h3>
+                                                                <h3 style="color: #F16667">Tìm thứ bạn muốn</h3>
+                                                                <h3 style="color: #0f1531">1240000</h3>
+                                                                <button class="btn btn-primary">Mua ngay</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="card text-white">
+                                                        <img class="card-img" src="../uploads/slider/mobile-audience-susan-gilbert-1000x500.jpg" alt="Card image">
+                                                        <div class="card-img-overlay d-flex">
+                                                            <div class="mt-auto text-left w-100">
+                                                                <h3 style="color: #0f1531">Điều hòa</h3>
+                                                                <h3 style="color: #0f1531">Toshiba</h3>
+                                                                <h3 style="color: #F16667">Xem ngay</h3>
+                                                                <h3 style="color: #0f1531">5390000</h3>
+                                                                <button class="btn btn-primary">Mua Ngay</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--sua ads-->
+                <div class="modal fade" id="edit_ads" tabindex="-1" role="dialog" aria-labelledby="edit_ads" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Sửa ADS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="modules/ads/ads-process.php" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Ảnh</label>
+                                        <input type="file" class="form-control" id="ads_image" name="ads_image">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Url</label>
+                                        <input type="text" class="form-control" id="ads_url" value="" name="ads_url">
+                                    </div>
+                                    <input type="text" class="form-control" name="ads_id" id="ads_id" style="opacity:0;visibility:hidden">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                        <button type="submit" name="edit" class="btn btn-primary">Cập Nhật</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--edit slide num-->
+                <div class="modal fade" id="edit_num_slide" tabindex="-1" role="dialog" aria-labelledby="edit_ads" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Sửa số slide</h5>
+                                <button type="button" class="close">
+                                    <span aria-hidden="true" data-dismiss="modal">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="modules/ads/ads-process.php" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <select class="form-control border-primary" id="exampleSelectPrimary" name="slide_num">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3" selected="selected">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success" name="edit_slide_num">Submit</button>
+                                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--view silde-->
+                <div class="modal fade" id="view_slide" tabindex="-1" role="dialog" aria-labelledby="view_user" aria-hidden="true">
+                    <div class="modal-dialog modal-md" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Thông Tin Slide</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div id="side_image"></div>
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Content 1</th>
+                                                    <td>
+                                                        <div id="content_1"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Content 2</th>
+                                                    <td>
+                                                        <div id="content_2"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Content 3</th>
+                                                    <td>
+                                                        <div id="content_3"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Content 4</th>
+                                                    <td>
+                                                        <div id="content_4"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Content 5</th>
+                                                    <td>
+                                                        <div id="content_5"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Url</th>
+                                                    <td>
+                                                        <div id="url_slide"></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--edit slide-->
+                <div class="modal fade" id="edit_slide" tabindex="-1" role="dialog" aria-labelledby="edit_product_image" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Sửa slide</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="modules/ads/ads-process.php" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Content 1</label>
+                                        <input type="text" class="form-control" id="edit_content_1" value="" name="edit_content_1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Content 2</label>
+                                        <input type="text" class="form-control" id="edit_content_2" value="" name="edit_content_2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Content 3</label>
+                                        <input type="text" class="form-control" id="edit_content_3" value="" name="edit_content_3">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Content 4 (giá)</label>
+                                        <input type="text" class="form-control" id="edit_content_4" value="" name="edit_content_4">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Content 5</label>
+                                        <input type="text" class="form-control" id="edit_content_5" value="" name="edit_content_5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Url</label>
+                                        <input type="text" class="form-control" id="edit_url" value="" name="edit_url">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Hình</label>
+                                        <input type="file" class="form-control" id="slide_image" value="" name="slide_image">
+                                    </div>
+                                    <input type="hidden" class="form-control" name="slide_id" id="slide_id">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                        <button type="submit" name="edit_slide" class="btn btn-primary">Cập Nhật</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="#">UrbanUI</a>. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        </div>
+        <!-- plugins:js -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+        <!-- endinject -->
+        <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+        <script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+        <!-- Plugin js for this page-->
+        <script src="node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+        <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+        <script src="node_modules/raphael/raphael.min.js"></script>
+        <script src="node_modules/morris.js/morris.min.js"></script>
+        <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <!-- End plugin js for this page-->
+        <script src="node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+        <!-- inject:js -->
+        <script src="js/off-canvas.js"></script>
+        <script src="js/hoverable-collapse.js"></script>
+        <script src="js/misc.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="node_modules/owl-carousel-2/owl.carousel.min.js"></script>
+        <script src="js/owl-carousel.js"></script>
+        <script src="js/data-table.js"></script>
+        <!-- End custom js for this page-->
+        <script src="js/toastDemo.js"></script>
+        <script src="js/ads.js"></script>
+</body>
+
+</html>

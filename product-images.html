@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Quản Lý Ảnh Sản Phẩm</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" />
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+<body>
+<div class="container-scroller">
+
+    
+
+<!-- partial:partials/_navbar.html -->
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+	<div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+		<a class="navbar-brand brand-logo" href="index.php"><img src="images/logo.svg" alt="logo"/></a>
+		<a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo"/></a>
+	</div>
+	<div class="navbar-menu-wrapper d-flex align-items-center">
+		<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+	
+
+
+
+
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown d-none d-lg-flex">
+				<a class="nav-link dropdown-toggle nav-btn" id="actionDropdown" href="#" data-toggle="dropdown">
+              <span class="btn">+ Tạo Mới</span>
+            </a>
+			
+
+				<div class="dropdown-menu navbar-dropdown dropdown-left" aria-labelledby="actionDropdown">
+					<a class="dropdown-item" href="#">
+                <i class="icon-user text-primary"></i>
+                Tài Khoản Người Dùng
+              </a>
+				
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">
+                <i class="icon-user-following text-warning"></i>
+                Tài Khoản Admin
+              </a>
+				
+
+			</li>
+		</ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+
+		<ul class="navbar-nav navbar-nav-right">
+			<li class="nav-item nav-settings d-none d-lg-block">
+				<a class="nav-link" href="index.php?act=logout" title="Đăng Xuất">
+              <i class="icon-logout"></i>
+            </a>
+			
+			</li>
+		</ul>
+		</div>
+</nav>
+<!-- partial -->    <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+
+            <!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <div class="nav-link">
+                <div class="profile-image">
+                    <a href="profile.php"><img src="images/faces/face1.jpg"
+                                               alt="image"/></a>
+                    <span class="online-status online"></span>
+                    <!--change class online to offline or busy as needed-->
+                </div>
+                <div class="profile-name">
+                    <p class="name">
+                        Giang Nguyễn                    </p>
+                    <p class="designation">
+                        Super Admin
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">
+                <i class="icon-rocket menu-icon"></i>
+                <span class="menu-title">Tổng Quan</span>
+                <span class="badge badge-success">New</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="product-category.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Loại Sản Phẩm</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="product.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Sản Phẩm</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="product-images.html">
+                <i class="icon-picture menu-icon"></i>
+                <span class="menu-title">Ảnh Sản Phẩm</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="brand.html">
+                <i class="icon-picture menu-icon"></i>
+                <span class="menu-title">Thương hiệu</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="order.html">
+                <i class="icon-tag menu-icon"></i>
+                <span class="menu-title">Đơn hàng</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="users.html">
+                <i class="icon-user menu-icon"></i>
+                <span class="menu-title">Tài Khoản</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ads.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">Quản lý quảng cáo</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- partial -->
+
+<div class="content-wrapper">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Quản Lý Ảnh Sản Phẩm</h4>
+			<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#add_product_image" data-whatever="@mdo" name="edit">Thêm</button>
+			<div class="row">
+				<div class="col-12">
+					<div class="table-responsive">
+						<table id="order-listing" class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th style="text-align: center">Tên sản phẩm</th>
+									<th style="text-align: center">Hình ảnh</th>
+									<th style="text-align: center">Xử lý</th>
+								</tr>
+							</thead>
+							<tbody>
+															<tr>
+									<td>1</td>
+									<td>Xiaomi Redmi 5 Plus - 32GB Ram 3GB</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/xiaomi-redmi-5-plus-32gb-1.jpg"><img style="width:70px;height:70px" src="images/product/xiaomi-redmi-5-plus-32gb-2.jpg"><img style="width:70px;height:70px" src="images/product/xiaomi-redmi-5-plus-32gb-3.jpg"><img style="width:70px;height:70px" src="images/product/xiaomi-redmi-5-plus-32gb-4.jpg"><img style="width:70px;height:70px" src="images/product/xiaomi-redmi-5-plus-32gb-5.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="1" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>2</td>
+									<td>Laptop Dell Inspiron 7460 N4I5259W core i5 ram 4G 14inch</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/dell-Inspiron-7460-N4I5259W-1.jpg"><img style="width:70px;height:70px" src="images/product/dell-Inspiron-7460-N4I5259W-2.jpg"><img style="width:70px;height:70px" src="images/product/dell-Inspiron-7460-N4I5259W-3.jpg"><img style="width:70px;height:70px" src="images/product/dell-Inspiron-7460-N4I5259W-4.jpg
+"><img style="width:70px;height:70px" src="images/product/dell-Inspiron-7460-N4I5259W-5.jpg
+"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="2" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>3</td>
+									<td>Samsung Galaxy S8 Plus 64G Ram 4GB</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/samsung-galaxy-s8-plus.jpg"><img style="width:70px;height:70px" src="images/product/samsung-galaxy-s8-plus-vang.jpg"><img style="width:70px;height:70px" src="images/product/samsung-galaxy-s8-plus-xanh-coral-.jpg"><img style="width:70px;height:70px" src="images/product/samsung-galaxy-s8-plus-xanh.jpg"><img style="width:70px;height:70px" src="images/product/636396217066191623_1.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="3" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>4</td>
+									<td>OPPO F3 64GB - Hãng phân phối chính thức </td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/Oppo-F3-1.jpg"><img style="width:70px;height:70px" src="images/product/Oppo-F3-2.jpg"><img style="width:70px;height:70px" src="images/product/Oppo-F3-3.png"><img style="width:70px;height:70px" src="images/product/Oppo-F3-4.jpg"><img style="width:70px;height:70px" src="images/product/Oppo-F3-5.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="4" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>5</td>
+									<td>Xiaomi Redmi 4X 16G</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/xiaomi-redmi-note-4-black_2_1484848856.jpg"><img style="width:70px;height:70px" src="images/product/xiaomi-redmi-4x-black6-500x500.jpg"><img style="width:70px;height:70px" src="images/product/Xiaomi-Redmi-5-Plus-5-99-Inch-4GB-64GB-Smartphone-Black-502960-.jpg"><img style="width:70px;height:70px" src="images/product/xiaomi-redmi-note-4_1511581431.jpg"><img style="width:70px;height:70px" src="images/product/Original-Xiaomi-Redmi-4X-4-X-2GB-RAM-16GB-ROM-SmartPhone-Snapdragon-435-Octa-Core-5.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="5" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>6</td>
+									<td>Điện Thoại 1280 Pin khủng siêu bền đẹp giá tốt nhất</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/1280tq.jpg"><img style="width:70px;height:70px" src="images/product/ftc1284946130.jpg"><img style="width:70px;height:70px" src="images/product/nokia-1280.jpg"><img style="width:70px;height:70px" src="images/product/nokia-1280_004.jpg"><img style="width:70px;height:70px" src="images/product/one-refurbished-nokia-1280-mobile-phone-refurbished.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="6" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>7</td>
+									<td>Laptop HP 14-bs562TU 2GE30PA Core i3-6006U Ram 4G 14 inch</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/laptop-hp-14bs562tu-2ge30pa-0eSom7.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-14bs562tu-2ge30pa-074FDb.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-14bs562tu-2ge30pa-AA2h8T.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-14bs562tu-2ge30pa-GWqih1.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-14bs562tu-2ge30pa-tKcz1t.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="7" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>8</td>
+									<td>LAPTOP HP FOLIO 9470M Core i7 3667u Ram3 8G SSD 128G 14in</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/d7fdd6c958264e12ba5c7b7e5f60d363_grande.jpg"><img style="width:70px;height:70px" src="images/product/hp-elitebook-folio-9470m-ultrabook_1445426169-copy-copy.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-folio-9470m-core-i7-3667u-ram3-8g-ssd-128g-14in-ultrabook-sieu-mong-nhe-16kg-hang-nhap-khau-tang-balo-chuot-wireless-1515246910-64761403-58a41cf6f6ef72b1970e6563ab5a5f4a-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-folio-9470m-core-i7-3667u-ram3-8g-ssd-128g-14in-ultrabook-sieu-mong-nhe-16kg-hang-nhap-khau-tang-balo-chuot-wireless-1515246910-64761403-2421a3e0cc1229995430aa64e16c4b25-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/laptop-hp-folio-9470m-core-i7-3667u-ram3-8g-ssd-128g-14in-ultrabook-sieu-mong-nhe-16kg-hang-nhap-khau-tang-balo-chuot-wireless-1515246910-64761403-fa2400bacd36833f79ffe7e3e84223fb-webp-zoom.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="8" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>9</td>
+									<td>Internet Tivi Sony 43 inch Full HD - Model KDL-43W750E VN3 </td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/tivi-sony-kdl-43w750e-1-2-org.jpg"><img style="width:70px;height:70px" src="images/product/tivi-sony-kdl-43w750e-2-1-org.jpg"><img style="width:70px;height:70px" src="images/product/tivi-sony-kdl-43w750e-3-1-org.jpg"><img style="width:70px;height:70px" src="images/product/tivi-sony-kdl-43w750e-9-org.jpg"><img style="width:70px;height:70px" src="images/product/tivi-sony-kdl-43w750e-11-org.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="9" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>10</td>
+									<td>Asus ROG GL552VX-DM044T Gaming Laptop 15.6' Core i7-6700HQ</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/7274_gl552vw_4.jpg"><img style="width:70px;height:70px" src="images/product/23320_asus_gaming_gl552vx_02.jpg"><img style="width:70px;height:70px" src="images/product/23320_asus_gaming_gl552vx_03.jpg"><img style="width:70px;height:70px" src="images/product/23320_asus_gaming_gl552vx_04.jpg"><img style="width:70px;height:70px" src="images/product/23320_asus_gaming_gl552vx_05.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="10" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>11</td>
+									<td>Laptop DELL Latitude E5520 Core i5 2520 /4G/HDD 250G/VGA HD/ Màn 15.6inch</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/201605-Dell-E5520-6DH4VR1-1-600x600.jpg"><img style="width:70px;height:70px" src="images/product/9618414_dell-latitude-E5520-core-i7-laptop_cuong_phat.png"><img style="width:70px;height:70px" src="images/product/dell-latitude-e5520-core-i5-2520m-1m4G3-AJeIMd.jpg"><img style="width:70px;height:70px" src="images/product/laptop-cu-dell-latitude-e5520_31.jpg"><img style="width:70px;height:70px" src="images/product/laptop-dell-latitude-e5520-core-i5-2520-4ghdd-250gvga-hd-man-156inch-hang-nhap-khau-1517562304-54700943.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="11" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>12</td>
+									<td>Chảo chống dính NHẬT BẢN Goldsun Gola1102 (26cm)</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/4b3894f5a491d22e6e35908fa2c49500.jpg"><img style="width:70px;height:70px" src="images/product/chao-chong-dinh-20cm-1502091066-6613859-a5c8ed35f663cf032b82daf7a031c86a.jpg"><img style="width:70px;height:70px" src="images/product/chao-chong-dinh-chong-tray-supor-f01a24-den-1497007775-8189636-211fbd682795eeebd321810f2cb3803f.jpg"><img style="width:70px;height:70px" src="images/product/chao-chong-dinh-nhat-ban-goldsun-gola1102-26cm-1508302814-65804271-b72e00481a25d9f77c22d0ccf3596983-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/chao-chong-dinh-nhat-ban-goldsun-gola1102-26cm-1513180104-65804271-553355b045c94f5c03cf1c98e9cda613-webp-zoom.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="12" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>13</td>
+									<td>Nồi đất Dong Hwa TUCBEGHI 1L</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/noi-f_1.u2566.d20160928.t120841.349425.jpg"><img style="width:70px;height:70px" src="images/product/noi-dat-dong-hwa-tucbeghi-1l-1507693429-08847361-3a99b35f4312165b4b9ce92de848adbc-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/noi-dat-dong-hwa-tucbeghi-1l-1507693430-08847361-f0218539c2efe3e882cdba86823ae871-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/noi-dat-dong-hwa-tucbeghi-1l-1513179699-08847361-35c0c9dbc179879f0653c7ca2e310944-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/CS600A.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="13" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>14</td>
+									<td>Samsung Galaxy Tab A 8.0" T385 2017</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/samsung-sm-t385nzdains-original-imaeyj2zrfpcgsx3.jpeg"><img style="width:70px;height:70px" src="images/product/S-13539-c612fc61d76ede0d10f1c05bbfb6b51a.jpg"><img style="width:70px;height:70px" src="images/product/S-13539-7c5a01bd8f2cdd14c0728fc32419f77f.jpg"><img style="width:70px;height:70px" src="images/product/S-13539-332cbd4bf3bb64476959e64a5e4fa9f0.jpg"><img style="width:70px;height:70px" src="images/product/S-13539-ac5478ffa4905d6052e1c97da756de5a.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="14" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>15</td>
+									<td>Apple iPhone 7 32GB (Vàng) </td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/apple-iphone-7-32gb-vang-hang-phan-phoi-chinh-thuc-1474001729-0101772-e9fc2a09815fbca3e4ca08fe69a3baf5-product.jpg"><img style="width:70px;height:70px" src="images/product/dien-thoai-apple-iphone-7-32gb-rose-gold-mn912vn-a_5.jpg"><img style="width:70px;height:70px" src="images/product/iphone_7_main_rg_ml.jpg"><img style="width:70px;height:70px" src="images/product/iphone-7-32gb-1480303416.jpg"><img style="width:70px;height:70px" src="images/product/iphone7-rose-2016.jpeg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="15" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>16</td>
+									<td>Huawei nova 2i 64GB 4GB RAM 2 SIM</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/201710030149178252.jpg"><img style="width:70px;height:70px" src="images/product/huawei-nova-2i-4-64gb-dual-sim-prestige-gold.jpg"><img style="width:70px;height:70px" src="images/product/huawei-nova-2i-64gb-4gb-ram-2-sim-xanh-hang-phan-phoi-chinh-thuc-1512635631-96520742-9bfa01c20669a54253a4d3dfedfbdb58-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/huawei-nova-2i-64gb-4gb-ram-2-sim-xanh-hang-phan-phoi-chinh-thuc-1512635631-96520742-674de56a91550025d0c9ff8c7c7a90d0-webp-zoom.jpg"><img style="width:70px;height:70px" src="images/product/huawei-nova-2i-64gb-4gb-ram-2-sim-xanh-hang-phan-phoi-chinh-thuc-1512635631-96520742-cb5048cb58fbece78496d72e989ade6d-webp-zoom.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="16" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>17</td>
+									<td>Huawei Y5 2017 16Gb - Hãng phân phối chính thức</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/636305316507798479_800.jpg"><img style="width:70px;height:70px" src="images/product/huawei-y5-2017-400x460-400x460.png"><img style="width:70px;height:70px" src="images/product/item_XL_23299070_33123718.jpg"><img style="width:70px;height:70px" src="images/product/mieng-dan-cuong-luc-huawei-y5-2017.jpg"><img style="width:70px;height:70px" src="images/product/y5-2017-gray-back.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="17" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>18</td>
+									<td>Gionee P5 Mini 8GB RAM 1GB</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/1.jpg"><img style="width:70px;height:70px" src="images/product/11-7014.jpg"><img style="width:70px;height:70px" src="images/product/gionee-p5-mini-400-400x460.png"><img style="width:70px;height:70px" src="images/product/gionee-p5-mini-blue.jpg"><img style="width:70px;height:70px" src="images/product/nHMvxl8rQEew._UX300_TTW_.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="18" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+																<tr>
+									<td>19</td>
+									<td>Asus Zenfone 4 Max Pro ZC554KL</td>
+									<td>
+
+                                        <img style="width:70px;height:70px" src="images/product/1.u4939.d20170822.t155930.280439.jpg"><img style="width:70px;height:70px" src="images/product/asus-zenfone-4-max-pro-zc554kl-hh-600x600.jpg"><img style="width:70px;height:70px" src="images/product/dan-da-asus-zenfone-4-max-pro-1030x1030.jpg"><img style="width:70px;height:70px" src="images/product/img-6.jpg"><img style="width:70px;height:70px" src="images/product/zen_max_master.jpg"></td>
+									<td>
+										<a  class = "badge badge-primary delete_data" data-toggle="modal" data-target="#delete_product_category" data-whatever="@mdo" id="19" name="delete" style="color:white;cursor:pointer" title="Xóa"><i class="fa fa-times-circle"></i></a>
+									</td>
+								</tr>
+															</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- sua hinh anh san pham -->
+<div class="modal fade" id="edit_product_image" tabindex="-1" role="dialog" aria-labelledby="edit_product_image" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Sửa hình ảnh sản phẩm</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="modules/product-category/product-category-process.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Tên</label>
+						<input type="text" class="form-control" id="product_category_name" value="" name="product_category_name">
+					</div>
+					<input type="text" class="form-control" name="product_category_id" id="product_category_id" style="opacity:0;visibility:hidden">
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+						<button type="submit" name="edit" class="btn btn-primary">Cập Nhật</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- them hinh anh san pham -->
+
+<div class="modal fade" id="add_product_image" tabindex="-1" role="dialog" aria-labelledby="add_product_image" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Thêm hình ảnh sản phẩm</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="modules/product-images/product-images-process.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Tên sản phẩm (**nhập đúng tên của sản phẩm ở tab sản phẩm)</label>
+						<input type="text" class="form-control" id="product_name" value="" name="product_name">
+					</div>
+					
+					<div class="form-group">
+						<label for="recipient-name" class="col-form-label">Hình sản phẩm (** Tối đa 5 hình)</label>
+                        <input type="file" class="form-control" id="product_image_name" value="" name="product_image_name[]" multiple="multiple" onchange="PreviewImage();">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+						<button type="submit" name="add" class="btn btn-primary">Thêm</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Xac nhan xoa -->
+<div class="modal fade" id="delete_product_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Confirm delete?</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
+        </div>
+       <div class="modal-footer">
+			<form id="delete_user" action="modules/product-images/product-images-process.php" method="post">
+				<div class="form-group">
+					<input type="text" class="form-control" id="_id" value="" name="product_category_id" style="opacity:0;visibility:hidden">
+				</div>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" name="delete" class="btn btn-primary">Delete</button>
+			</form>
+	    </div>
+    </div>
+  </div>
+</div><footer class="footer">
+	<div class="container-fluid clearfix">
+		<span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="#">UrbanUI</a>. All rights reserved.</span>
+		<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+	</div>
+</footer>
+        </div>
+    </div>
+</div>
+
+<!-- plugins:js -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+<!-- endinject -->
+<script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+<script src="node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- Plugin js for this page-->
+<script src="node_modules/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/raphael/raphael.min.js"></script>
+<script src="node_modules/morris.js/morris.min.js"></script>
+<script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="js/off-canvas.js"></script>
+<script src="js/hoverable-collapse.js"></script>
+<script src="js/misc.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="js/data-table.js"></script>
+<!-- End custom js for this page-->
+<script src="js/product-image.js"></script>
+</body>
+
+</html>
